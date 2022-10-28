@@ -66,8 +66,7 @@ def verifica_primeiro_argumento(valor):
         def outra(*args, **kwargs):
             if args and args[0] != valor:
                 return f'Valor incorreto! Primeiro argumento precisa ser {valor}'
-            result = funcao(*args, **kwargs)
-            return result
+            return funcao(*args, **kwargs)
         return outra
     return interna
 
@@ -89,4 +88,4 @@ print(soma_dez(10, 21))
 
 print(comida_favorita('pizza', 'churrasco', 'sanduiche'))
 
-# print(comida_favorita('sanduiche', 'churrasco'))
+print(comida_favorita('sanduiche', 'churrasco'))
