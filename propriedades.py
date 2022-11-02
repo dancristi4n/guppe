@@ -1,7 +1,9 @@
 """
 POO - Propriedades - Properties
 
-Em linguagens de programação como o Java, ao declararmos atributos privados nas classes, costumamos a criar métodos públicos para manipulação desses atributos. Esses métodos são conhecidos por getters e setters, onde os getters retornam o valor do atributo e os setters alteram o valor do mesmo.
+Em linguagens de programação como o Java, ao declararmos atributos privados nas classes, costumamos a criar métodos
+públicos para manipulação desses atributos. Esses métodos são conhecidos por getters e setters,
+onde os getters retornam o valor do atributo e os setters alteram o valor do mesmo.
 
 class Conta:
 
@@ -60,8 +62,8 @@ print(conta1.__dict__)
 
 """
 
-class Conta:
 
+class Conta:
     contador = 0
 
     def __init__(self, titular, saldo, limite):
@@ -74,7 +76,7 @@ class Conta:
     @property
     def numero(self):
         return self.__numero
-    
+
     @property
     def titular(self):
         return self.__titular
@@ -104,6 +106,10 @@ class Conta:
         self.__saldo -= valor
         destino.__saldo += valor
 
+    @property
+    def valor_total(self):
+        return self.__saldo + self.__limite
+
 
 conta1 = Conta('Felicity', 3000, 5000)
 conta2 = Conta('Angelina', 2000, 4000)
@@ -114,7 +120,9 @@ print(conta2.extrato())
 soma = conta1.saldo + conta2.saldo
 print(f'A soma do saldo das contas é {soma}')
 
-
 print(conta1.__dict__)
 conta1.limite = 76543
 print(conta1.__dict__)
+
+print(conta1.valor_total)
+print(conta2.valor_total)
