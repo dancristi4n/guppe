@@ -13,3 +13,19 @@ def dormir(num_horas):
     else:
         return f'Continuo cansado após dormir por {num_horas} horas. :('
 
+
+def eh_engracada(pessoa):
+    comediantes = ['Jim Carrey', 'Bozo']
+    if pessoa in comediantes:
+        return True
+    return False
+
+
+def eh_admin(usuario):
+    if usuario == 'morpheus':
+        return 'Bem vindo admin!'
+    return 'Acesso negado'
+
+
+def listar_usuarios():
+    return ['u1', 'u2']
